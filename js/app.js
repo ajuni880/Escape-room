@@ -4,6 +4,6 @@ $(document).ready(function () {
 });
 
 (function(){
-  var hotelbApp = angular.module('provenApp', ['ng-currency','ui.bootstrap']);
+  var hotelbApp = angular.module('escapeRoomApp', ['ng-currency','ui.bootstrap']);
 
 })();
