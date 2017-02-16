@@ -1,0 +1,18 @@
+{
+  "name": "test_daw2_2016-01-19_forms_solution",
+  "version": "1.0.0",
+  "description": "Testing angular forms",
+  "main": "index.js",
+  "dependencies": {
+    "angular-i18n": "^1.6.1",
+    "angular-moment": "^1.0.1",
+    "angularjs-datepicker": "^2.1.9",
+    "moment": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Roberto Plana",
+  "license": "ISC"
+}

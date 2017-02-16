@@ -1,0 +1,162 @@
+<form class="login2" name="reservationManagement"  ng-submit="reservationManagment.$valid && hotelResCtrl.submit()" novalidate>
+	<div class="container well">
+		<div class="form-horizontal" >
+			<div class="row">
+				<div class="col-xs-12"><h2>Make a reservation in the best hotel in the world</h2></div>
+			</div>
+			<br/>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-12" align="center"><h3>Personal data</h3></div>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Name *</label>
+				<div class="col-sm-4">
+					<input class="form-control" ng-model="reservation.name" ng-pattern="/^[A-Z][a-zA-Z]+$/" type="text" required />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Last name *</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text"  required />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Address 1*</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" required />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Address 2</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">City *</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" requeired />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">State *</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text" requeired />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Postal code *</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text"  required />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Email Adress *:</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="email" required />
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Phone *:</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text"  placeholder="666111222" required/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-xs-12" align="center"><h3>Reservation details</h3></div>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Check in Date *:</label>
+				<div class="col-sm-6">
+					<p class="input-group">
+						<input type="text"
+						class="form-control"
+						id="checkInDate"
+						ng-model="reservation.checkInDate"
+						ng-change="validateDates()"
+						uib-datepicker-popup="{{format}}"
+						is-open="checkInDate.opened"
+						datepicker-options="dateOptions"
+						close-text="Close"
+						alt-input-formats="altInputFormats"
+						readonly/>
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="openCheckInDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+						</span>
+					</p>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Check in time: </label>
+				<div class="col-sm-2">
+					<select class="form-control" name="checkInTime" id="checkInTime" id="checkInTime" required>
+
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroup">Check out Date *:</label>
+				<div class="col-sm-6">
+					<p class="input-group">
+						<input type="text"
+						class="form-control"
+						ng-model="reservation.checkOutDate"
+						ng-change="validateDates()"
+						id="checkOutDate"
+						uib-datepicker-popup="{{format}}"
+						is-open="checkOutDate.opened"
+						datepicker-options="dateOptions"
+						alt-input-formats="altInputFormats"
+						readonly/>
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="openCheckOutDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+						</span>
+					</p>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Check out time: </label>
+				<div class="col-sm-2">
+					<select class="form-control" name="checkOutTime" id="checkOutTime" required>
+
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="has-error">
+					<b>Check in date must be greater than today and Check in date must be less tha Check out date</b>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroup">Adults *</label>
+				<div class="col-sm-4">
+					<select class="form-control" id="numOfAdults" required>
+					</select>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Children *</label>
+				<div class="col-sm-4">
+					<select class="form-control" id="numOfChildren" required>
+					</select>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Room preference *</label>
+				<div class="col-sm-4">
+					<input type="radio" name="roomPref" value="standard" />Standard
+					<input type="radio" name="roomPref" value="deluxe"  />Deluxe
+					<input type="radio" name="roomPref" value="suite" />Suite
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Special requests</label>
+				<div class="col-sm-4">
+					<div>
+						<input type="checkbox" id="specialReq" />
+						<label for=""></label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroup">Special instructions</label>
+				<div class="col-sm-4">
+					<textarea class="form-control"  id="specialInstructions"  ></textarea>
+				</div>
+				<label class="col-sm-2 control-label" for="formGroup">Total price:</label>
+				<div class="col-sm-4">
+					<input class="form-control" ng-model="reservation.totalPrice" ng-currency type="text" readonly/>
+				</div>
+			</div>
+			<br />
+			<br />
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="formGroup"></label>
+				<div class="col-sm-4">
+					<button class="btn btn-success" ng-disabled="reservationManagment.$invalid">
+						Submit
+					</button>
+				</div>
+				<div class="form-group col-sm-6">
+					<label>
+						<input class="btn btn-default btn-primary btn-block" type="button" value="Back" >
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
