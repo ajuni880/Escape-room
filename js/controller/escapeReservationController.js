@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 //Angular code
 (function (){
-	angular.module('hotelbApp').controller('hotelReservationController', ['$scope', '$window', function($scope, $window) {
+	angular.module('escapeRoomApp').controller('escapeReservationController', ['$scope', '$window', function($scope, $window) {
 		//Properties
 		$scope.reservation = new reservationObj();
 		$scope.reservation.setTotalPrice(50);
@@ -55,16 +55,16 @@ $(document).ready(function () {
 
 	}]);
 
-	angular.module('hotelbApp').directive("hotelReservationForm", function (){
-		return {
-			restrict: 'E',
-			templateUrl:"view/templates/hotel-reservation-form.html",
-			controller:function(){
-
-			},
-			controllerAs: 'hotelReservationForm'
-		};
-	});
+	// angular.module('hotelbApp').directive("hotelReservationForm", function (){
+	// 	return {
+	// 		restrict: 'E',
+	// 		templateUrl:"view/templates/hotel-reservation-form.html",
+	// 		controller:function(){
+	//
+	// 		},
+	// 		controllerAs: 'hotelReservationForm'
+	// 	};
+	// });
 })();
 
 
