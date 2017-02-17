@@ -2,70 +2,48 @@ function Reservation ()
 {
 	//Attributes declaration
 	this.id;
-	this.name;
-	this.surname;
-	this.city;
-	this.numOfAdults;
-	this.phone;
-	this.email;
+	this.numOfPlayers;
 	this.roomPreference;
 	this.checkInDate;
 	this.checkOutDate;
 	this.checkInTime;
-	this.checkOutTime;
-
+ 	this.postCode;
 	this.totalPrice;
 
 
 
 	//Methods declaration
-	this.construct = function (id,name,surname, city, numOfAdults, phone, email, roomPreference, checkInDate, checkOutDate, checkInTime, checkOutTime, totalPrice)
+	 this.construct = function (id, numOfPlayers, roomPreference, checkInDate, checkOutDate, checkInTime, postCode,totalPrice)
 	{
 		this.setId(id);
-		this.setName(name);
-		this.setSurname(surname);
-		this.setCity(city);
-		this.setNumOfAdults(numOfAdults);
-		this.setPhone(phone);
-		this.setEmail(email);
+		this.setNumOfPlayers(numOfPlayers);
 		this.setRoomPreference(roomPreference);
 		this.setCheckInDate(checkInDate);
 		this.setCheckOutDate(checkOutDate);
 		this.setCheckInTime(checkInTime);
-		this.setCheckOutTime(checkOutTime);
+		this.setCheckOutTime(postCode);
 		this.setTotalPrice(totalPrice);
 
 	}
 
 	this.setId = function (id){this.id=id;}
-	this.setName = function (name){this.name=name;}
-	this.setSurname = function (surname){this.surname=surname;}
-	this.setCity = function (city){this.city=city;}
-
-	this.setNumOfAdults = function (numOfAdults){this.numOfAdults=numOfAdults;}
-	this.setPhone = function (phone){this.phone=phone;}
-	this.setEmail = function (email){this.email=email;}
+	this.setNumOfPlayers = function (numOfPlayers){this.numOfPlayers=numOfPlayers;}
 	this.setRoomPreference = function (roomPreference){this.roomPreference=roomPreference;}
 	this.setCheckInDate = function (checkInDate){this.checkInDate=checkInDate;}
 	this.setCheckOutDate = function (checkOutDate){this.checkOutDate=checkOutDate;}
 	this.setCheckInTime = function (checkInTime){this.checkInTime=checkInTime;}
-	this.setCheckOutTime = function (checkOutTime){this.checkOutTime=checkOutTime;}
+	this.setCheckOutTime = function (postCode){this.postCode=postCode;}
 	this.setTotalPrice = function (totalPrice){this.totalPrice=totalPrice;}
 
 
 
 	this.getId = function () {return this.id;}
-	this.getName = function () {return this.name;}
-	this.getSurname = function () {return this.surname;}
-	this.getCity = function () {return this.city;}
-	this.getNumOfAdults = function () {return this.numOfAdults;}
-	this.getPhone = function () {return this.phone;}
-	this.getEmail = function () {return this.email;}
+	this.getNumOfPlayers = function () {return this.numOfPlayers;}
 	this.getRoomPreference = function () {return this.roomPreference;}
 	this.getCheckInDate = function () {return this.checkInDate;}
 	this.getCheckOutDate = function () {return this.checkOutDate;}
 	this.getCheckInTime = function () {return this.checkInTime;}
-	this.getCheckOutTime = function () {return this.checkOutTime;}
+	this.getCheckOutTime = function () {return this.postCode;}
 	this.getTotalPrice = function () {return this.totalPrice;}
 
 

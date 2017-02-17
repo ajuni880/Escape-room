@@ -1,0 +1,70 @@
+ <form  name="reservationUserManagement"  novalidate>
+	<div class="well">
+		<div class="form-horizontal" >
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Choose the room to live an incredible experience!</h2>
+				</div>
+			</div>
+			<br/>
+
+				<div class="row">
+					<div class="col-xs-12" align="center"><h3>Personal data</h3></div>
+				</div>
+				<div class="row">
+					<div class="col-md-offset-1 col-md-4">
+
+						<div class=" form-group">
+							<label class="control-label" for="formGroup">Name *</label>
+							<input class="form-control" name="name" ng-model="reservation.name" ng-pattern="/^[A-Z][a-zA-Z]+$/"
+               type="text"
+               ng-minlength="3" ng-maxlength="10" required />
+               <span ng-show="reservationUserManagement.name.$error.minlength">Too short name!</span>
+               <span ng-show="reservationUserManagement.name.$error.maxlength">Too large name!</span>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Last name *</label>
+							<input class="form-control" ng-model="reservation.surname"
+              ng-pattern="/^[A-Z][a-zA-Z]+$/" type="text"  required
+              ng-minlength="3" ng-maxlength="10"/>
+              <span ng-show="reservationUserManagement.surname.$error.minlength">Too short surname!</span>
+              <span ng-show="reservationUserManagement.surname.$error.maxlength">Too large surname!</span>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Email Adress *:</label>
+							<input class="form-control" ng-model="reservation.email" type="email" required
+              ng-pattern="/^\w+@[a-z]{3,6}\.[a-z]{2,4}/" />
+						</div>
+
+					</div>
+					<!-- Second column -->
+					<!-- City data -->
+					<div class="col-md-offset-1 col-md-4">
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">City *</label>
+							<input class="form-control" ng-model="reservation.city" type="text" required
+              ng-pattern="/^[a-z]{2,12}$/" />
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Postal Code *</label>
+							<input class="form-control" ng-model="reservation.postCode" type="text" requeired
+              ng-pattern="/^\d{5}$/" />
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Phone *:</label>
+							<input class="form-control" type="text" ng-model="reservation.phone"
+              placeholder="666111222" required
+              ng-pattern="/^[0-9]{9,12}$/"/>
+						</div>
+					</div>
+
+				</div>
+				<button class="btn btn-success" ng-click="showForm=2" ng-disabled="reservationUserManagement.$invalid">
+					Next
+				</button>
+</form>

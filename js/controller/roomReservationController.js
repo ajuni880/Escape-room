@@ -1,19 +1,15 @@
-// jQuery code
-$(document).ready(function () {
-
-});
 
 //Angular code
 (function (){
-	angular.module('escapeRoomApp').controller('escapeReservationController', ['$scope', '$window', function($scope, $window) {
+	angular.module('escapeRoomApp').controller('roomReservationController', ['$scope', '$window', function($scope, $window) {
 		//Properties
-		$scope.reservation = new reservationObj();
-		$scope.reservation.setTotalPrice(50);
+		$scope.showForm=1;
+		 $scope.reservation = new Reservation();
+		 $scope.reservation.setTotalPrice(50);
 
-		$scope.reservation.setCheckInDate(new Date());
-		$scope.reservation.setCheckOutDate(new Date().setDate(new Date().getDate()+1));
+		// $scope.reservation.setCheckInDate(new Date());
+		// $scope.reservation.setCheckOutDate(new Date().setDate(new Date().getDate()+1));
 		//Scope variables
-		$scope.showAction;
 		$scope.specialRequests=["Breakfast in the room", "Dinner on the roof ", "Romantic visit of the city"];
 		$scope.checkInTime = ["00:00", "01:00","02:00"];
 		$scope.checkOutTime = ["00:00", "01:00","02:00"];
@@ -48,23 +44,30 @@ $(document).ready(function () {
 			console.log($scope.reservation);
 		}
 		$scope.validateDates = function(){
-
+			$scope.dateOptions = {
+				dateDisabled: disabled,
+				formatYear: 'yyyy',
+				maxDate: new Date(2020, 5, 22),
+				minDate: $scope.reservation.getCheckInDate(),
+				startingDay: 1
+			};
 
 
 		}
 
 	}]);
 
-	// angular.module('hotelbApp').directive("hotelReservationForm", function (){
-	// 	return {
-	// 		restrict: 'E',
-	// 		templateUrl:"view/templates/hotel-reservation-form.html",
-	// 		controller:function(){
-	//
-	// 		},
-	// 		controllerAs: 'hotelReservationForm'
-	// 	};
-	// });
+
+	angular.module('escapeRoomApp').directive("roomReservationData", function (){
+		return {
+			restrict: 'E',
+			templateUrl:"view/templates/room-reservation-data.html",
+			controller:function(){
+
+			},
+			controllerAs: 'roomReservationData'
+		};
+	});
 })();
 
 

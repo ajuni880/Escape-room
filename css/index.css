@@ -1,16 +1,19 @@
 .ng-invalid.ng-dirty
 {
-  border-color:red
+    border-left:5px solid red;
 }
 
 .ng-valid.ng-dirty
 {
-  border-color:green
+
+  border-left:5px solid green;
 }
 
-#logo{
-	margin:auto;
-	width:100%;
+img{
+  width: 100%;
+}
+span{
+  color: red;
 }
 .navbar-inverse .navbar-nav li.nav-button a{
   display: block;
@@ -25,4 +28,8 @@
   background-color: #96c892;
   margin-left:600px;
   color: #fff;
+}
+header{
+  height: 300px;
+  margin-bottom: 10px;
 }
