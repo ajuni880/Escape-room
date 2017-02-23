@@ -31,6 +31,7 @@
   <script src="js/controller/escapeMainController.js" type="text/javascript" xml:space="preserve"></script>
   <script src="js/controller/generalFunctions.js" type="text/javascript" xml:space="preserve"></script>
   <script src="js/controller/roomReservationController.js" type="text/javascript" xml:space="preserve"></script>
+    <script src="js/controller/reviewsController.js" type="text/javascript" xml:space="preserve"></script>
 </head>
 <body class="container" ng-controller="escapeMainController as MainCtrl">
   <header>
@@ -42,7 +43,7 @@
         <ul class="nav navbar-nav">
             <li><a href="#" ng-click="action=1">Reserve Room</a></li>
             <li><a href="#">Add new game</a></li>
-            <li><a href="#">Make a review</a></li>
+            <li><a href="#" ng-click="action=2">Make a review</a></li>
             <li class="nav-button"><a  href="#">Create New Account</a></li>
         </ul>
       </nav>
@@ -55,9 +56,10 @@
       <room-reservation-data></room-reservation-data>
     </div>
 
-    <!-- <div id="reviews"  ng-show="showAction==2">
-      <hotel-reviews-form></hotel-reviews-form>
-    </div> -->
+    <div id="reviews"
+    ng-controller="reviewsController as ReviewsCtrl" ng-show="$parent.action==2">
+      <reviews-template></reviews-template>
+    </div>
 
   <!-- <div id="foot" class="container well">
     <button class="btn btn-primary pull-left" onclick="location.reload()">Reload</button>

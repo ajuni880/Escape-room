@@ -1,0 +1,48 @@
+<form  name="reviewsManagement"  ng-submit="reviewsManagement.$valid">
+		<div class="form-horizontal">
+
+				<div class="row">
+
+				</div>
+				<div class="row">
+					<div class="col-md-offset-4 col-md-4 well">
+						<div><h3>Write a review!!!</h3></div>
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Email *:</label>
+								<input type="text"  class="form-control" name="email" ng-model="review.email"
+								ng-pattern="/^\w+@[a-z]{3,6}\.[a-z]{2,4}/" placeholder="reviews12@gmail.com" required />
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Opinion *:</label>
+							<textarea placeholder="Write here your opinion..." name="opinion" class="form-control" rows="3" cols="80" ng-model="review.opinion" required></textarea>
+
+						</div>
+
+						<div class="form-group">
+							<label class="control-label" for="formGroup">Rate *:</label>
+							<div style="display:inline-block;" ng-repeat="rate in rates">
+								<input type="radio" name="rate" ng-model="reservation.rate" ng-value="rate" />{{rate}}
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<button type="submit" class="btn btn-success" ng-disabled="reservationRoomManagement.$invalid || !allValidFields()">
+								Submit
+							</button>
+						</div>
+						<div class="col-sm-1">
+							<button class="btn btn-danger" ng-click="$parent.action=0">
+								Back
+							</button>
+						</div>
+						</div>
+
+					</div>
+		</div>
+
+			<div class="row">
+
+			</div>
+
+		</div>
+</form>
